@@ -1,5 +1,5 @@
 # for student
-Class= []
+Class= [] # create a class to hold all student personal information
 number_of_students = int(input("Input number of students for this class: "))
 def Newstudent(number_of_students):       
         studentID = int(input("ID of this student: "))
@@ -10,7 +10,7 @@ for i in range(number_of_students):
         Class.append(Newstudent(number_of_students))
 
 # for courses
-Courses = []
+Courses = [] #create a list of courses to hold all course information
 number_of_courses = int(input("Input number of courses existed: "))
 def NewCourse(number_of_course):
         CourseID = int(input("ID of this course: "))
@@ -20,47 +20,37 @@ for i in range(number_of_courses):
         Courses.append(NewCourse(number_of_courses))
 print(Courses)
 
-# select course -> Create dictionary based on course ID
-# create loop to insert student score
-# input each student mark
-
-# courses = {course_name_mark:{id : ... ; id: ...}}
-# class = [(id,name,dob),(id,name,dob),...]
-
-mark_section = {}
+mark_section = {} # create for holding courses with each courses has values of student ID in them
 for i in Courses: # begin creating list for courses
         mark_section[i[1]] = {} 
 print(mark_section)
+# input marks for student - every student join all the existed courses scenario 
 while True:
         course_callout_marker = str(input("Input the course that you want to marking (0 if quit): "))
-        for i in Class:
-                mark_section[course_callout_marker][i[0]] = int(input(f"Input score of student {i[1]}-{i[0]}: "))
-        if course_callout_marker == 0 :
+        if course_callout_marker == "0" :
                 break
-print(mark_section)
+        else:
+                for i in Class:
+                        mark_section[course_callout_marker][i[0]] = int(input(f"Input score of student {i[1]}-{i[0]}: "))
 
-# asking score of student
+#asking score of student
+for i in Class:
+        print(f"{i[0]}-{i[1]}")
+while True:
+        callout_student_mark = int(input("Input the student ID to know the score (or press 0 to quit): "))
+        if callout_student_mark != 0:
+                for i in Class: 
+                        if i[0] == callout_student_mark:
+                                print(f"Name: {i[1]}, studentID: {i[0]}, Date of birth: {i[2]}")
+                                break
+                for i in mark_section:
+                        score = mark_section[i].get(callout_student_mark,"No score")
+                        print(f"{i}: {score}")
+        else:
+                print("All system offline")
+                break
 
-print(Class)
-callout_student_mark = int(input("Input the student ID to know the score: "))
-
-# we can use a function that called findind_student_ID to get the id of the student based on their input name 
-# => based on return value of that ID -> callout on the list
-for i in mark_section:
-        print(f"{i}: {mark_section[i][callout_student_mark]}")
-        
-# What is the format of answer : student_name, course_A: score, course_B : score
-
-#create input for student namem ID and Dob
-# => create dictionary that include students list?
-# format: class has 2 students {{ID1,name1,DoB1},{ID2,name2,DoB2}}
-
-# for i in range(number_of_students):
-#     studentID = int(input("ID of this student:"))
-#     studentname= str(input("name of this student:"))
-#     studentDoB= str(input("Date of birth of this student:"))
-#     Class["num"] = i
-#     students["ID"] = studentID
-#     students["name"] = studentname
-#     students["Dob"] = studentDoB
-# print(students)
+# FREE example: cuz im too lazy bruh im aint pressing the same input for 500 times (i did)
+# mark_section = {"math": {24: 18,25: 15,26: 12},"eng": {24: 16,25: 19,26: 14},"physics": {24: 17,25: 14,26: 16}}
+# Courses = [(101, "math"),(102, "eng"),(103, "physics")]
+# Class = [(24, "Duy", "13/05/2004"),(25, "Mai", "22/09/2004"),(26, "Alex", "05/11/2003")]
