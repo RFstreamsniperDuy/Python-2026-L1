@@ -1,12 +1,12 @@
-# First work
+#1
 n = int(input("Enter circle radius? "))
 print("Circle area =", (n**2)*3.14)
 
-#2rd
+#2
 C = int(input("Enter the temperature in Celcius? "))
 print(f"{C} (C) = {(C*1.8)+32}(F)")
 
-#3rd
+#3
 prime_or_not = int(input("Enter a number? "))
 condition = True
 for i in range(2,prime_or_not):
@@ -18,7 +18,7 @@ if condition == False or prime_or_not < 2:
 else:
     print(f"{prime_or_not} is a prime number")
 
-#4th
+#4
 perfect_number = int(input("Enter a number? "))
 divisible_list = []
 for i in range(1,perfect_number):
@@ -29,7 +29,7 @@ if sum(divisible_list) == perfect_number:
 else:
     print(f"{perfect_number} is not a perfect number!")
 
-# 5th
+#5
 existed_color = ["red","black","purple","blue"]
 color = str(input("What is your favourite color? "))
 if color in existed_color:
@@ -37,7 +37,7 @@ if color in existed_color:
 else:
     print("Sorry, i could not find your color")
     
-# 6th
+#6
 print("range1")
 for i in range(0,7,1):
     print(f"{i},", end=" ")
@@ -51,7 +51,7 @@ print("\nrange4")
 for i in range(6,-3,-2):
     print(f"{i},", end=" ") 
 
-# 7th
+#7
 #remove dollar sign => insert a string, 
 # split them into letters, 
 # find $ sign and remove  
@@ -65,7 +65,7 @@ def remove_dollar_sign(s):
     return ''.join(letter_list) #there is a method to join list character together is to use the .join() method
 print(remove_dollar_sign(str_test))
 
-#8th
+#8
 num_list_example = []
 n = 1
 while n != 0:
@@ -79,7 +79,7 @@ def extract_even(l):
     return ans_list
 print(extract_even(num_list_example))
 
-#9th
+#9
 inp_num = int(input("Input a number to calculate factorial of it: "))
 def factorial_num(num):
     factorial_ans = 1
@@ -91,7 +91,7 @@ def factorial_num(num):
     print (f"The factorial of {num}:",factorial_ans)
 factorial_num(inp_num)
 
-#10th
+#10
 inp_num = int(input("Input a number: "))
 def divisors_finder(num):
     divisors_list= []
@@ -101,7 +101,7 @@ def divisors_finder(num):
     return divisors_list
 print(divisors_finder(inp_num))
 
-#11th
+#11
 # split into 2 points A and B (using (x,y))
 # A(2,3) - B(5,6)
 import math
@@ -111,7 +111,7 @@ B1 = int(input("Input x of point B: "))
 B2 = int(input("Input y of point B: "))
 print("The distance between A and B is: ",math.sqrt((A1-B1)**2+(A2-B2)**2))
 
-#12th
+#12
 m = int(input("length of graph: "))
 n = int(input("width of graph: "))
 def pattern(m,n):
