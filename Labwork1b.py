@@ -1,23 +1,17 @@
+import labwork1b_functions
 # for student
 Class= [] # create a class to hold all student personal information
 number_of_students = int(input("Input number of students for this class: "))
-def Newstudent(number_of_students):       
-        studentID = int(input("ID of this student: "))
-        studentname= str(input("name of this student: "))
-        studentDoB= str(input("Date of birth of this student: "))
-        return studentID,studentname,studentDoB
+
 for i in range(number_of_students):
-        Class.append(Newstudent(number_of_students))
+        Class.append(labwork1b_functions.Newstudent(number_of_students))
 
 # for courses
 Courses = [] #create a list of courses to hold all course information
 number_of_courses = int(input("Input number of courses existed: "))
-def NewCourse(number_of_course):
-        CourseID = int(input("ID of this course: "))
-        CourseName = str(input("Name of this course: "))
-        return CourseID, CourseName
+
 for i in range(number_of_courses):
-        Courses.append(NewCourse(number_of_courses))
+        Courses.append(labwork1b_functions.NewCourse(number_of_courses))
 print(Courses)
 
 mark_section = {} # create for holding courses with each courses has values of student ID in them
